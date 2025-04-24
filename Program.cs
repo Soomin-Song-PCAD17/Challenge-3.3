@@ -8,7 +8,7 @@
 /// Output: [0,1]
 /// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-int[] nums = [2, 7, 11, 15];
+int[] nums = [3, 7, 11, 15];
 int target = 9;
 
 int[] answer = Indices(nums, target);
@@ -17,14 +17,14 @@ Console.WriteLine($"({answer[0]}, {answer[1]})");
 
 int[] Indices(int[] nums, int target)
 {
-    for (int i = 0; i < nums.Length; i++)
+    for (int i = 0; i < nums.Length - 1; i++)
     {
         for (int j = i + 1; j < nums.Length; j++)
         {
             if (nums[i] + nums[j] == target) { return [i, j]; }
         }
     }
-    return [];
+    return [-1, -1];
 }
 
 
